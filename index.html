@@ -56,7 +56,7 @@
             font-weight: 600;
         }
 
-        /* 锚点定位偏移，防止被导航栏遮挡 */
+        /* 锚点定位偏移 */
         section {
             scroll-margin-top: 5rem;
         }
@@ -101,7 +101,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/5 absolute w-full">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
                 <a href="#home" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
@@ -113,7 +113,7 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 text-left z-10" data-aos="fade-right">
@@ -183,7 +183,7 @@
         </div>
     </section>
 
-    <!-- About Section (New) -->
+    <!-- About Section -->
     <section id="about" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Technical Arsenal</h2>
@@ -297,7 +297,6 @@
                     <div class="h-48 bg-slate-800 relative overflow-hidden group">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                         <div class="absolute inset-0 flex items-center justify-center bg-slate-900 z-0">
-                             <!-- 这里可以换成项目截图 -->
                             <i class="fas fa-sign-language text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
                         </div>
                         <div class="absolute bottom-4 left-4 z-20">
@@ -379,19 +378,22 @@
             <p class="text-slate-400 text-sm mb-8">Feel free to reach out for collaborations or just a chat about AI.</p>
             
             <div class="flex justify-center space-x-8 mb-8">
+                <!-- Email -->
                 <a href="mailto:2251929@tongji.edu.cn" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
                     <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all">
                         <i class="fas fa-envelope text-xl"></i>
                     </div>
                     <span class="text-xs">Email</span>
                 </a>
+                <!-- GitHub -->
                 <a href="https://github.com/yao0816" target="_blank" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
                     <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-all">
                         <i class="fab fa-github text-xl"></i>
                     </div>
                     <span class="text-xs">GitHub</span>
                 </a>
-                <a href="#" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
+                <!-- LinkedIn (Updated) -->
+                <a href="https://www.linkedin.com/in/yinsheng-yao/" target="_blank" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
                     <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-blue-600/20 group-hover:text-blue-500 transition-all">
                         <i class="fab fa-linkedin-in text-xl"></i>
                     </div>
@@ -433,7 +435,7 @@
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-        // 点击链接后自动收起菜单
+        
         links.forEach(link => {
             link.addEventListener('click', () => menu.classList.add('hidden'));
         });
@@ -469,7 +471,7 @@
             });
         });
 
-        // 5. Three.js 神经网络背景 (升级版：带连线和鼠标互动)
+        // 5. Three.js 背景
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -478,14 +480,11 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
 
-        // 粒子设置
         const particlesCount = 80;
         const posArray = new Float32Array(particlesCount * 3);
-        const velArray = new Float32Array(particlesCount * 3); // 速度
-
+        
         for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 20; // 范围
-            velArray[i] = (Math.random() - 0.5) * 0.02; // 随机漂浮速度
+            posArray[i] = (Math.random() - 0.5) * 20; 
         }
 
         const particlesGeometry = new THREE.BufferGeometry();
@@ -501,63 +500,24 @@
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
         scene.add(particlesMesh);
 
-        // 连线材质
-        const lineMaterial = new THREE.LineBasicMaterial({
-            color: 0x3b82f6,
-            transparent: true,
-            opacity: 0.15
-        });
-
         camera.position.z = 5;
 
-        // 鼠标交互变量
         let mouseX = 0;
         let mouseY = 0;
-        let targetX = 0;
-        let targetY = 0;
 
         document.addEventListener('mousemove', (event) => {
             mouseX = event.clientX - window.innerWidth / 2;
             mouseY = event.clientY - window.innerHeight / 2;
         });
 
-        // 动画循环
         const animate = () => {
             requestAnimationFrame(animate);
 
-            // 缓慢自转
             particlesMesh.rotation.y += 0.001;
             
-            // 鼠标视差效果
-            targetX = mouseX * 0.001;
-            targetY = mouseY * 0.001;
-            
-            particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
-            particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
-
-            // 动态绘制连线
-            // 为了性能，移除旧的线，重新根据当前点位置画线
-            // 注意：这种 "remove -> add" 方式在原生JS中对 <100点 是可行的，但在大型项目中应使用 Shader
-            
-            // 清理旧线
-            const childrenToRemove = [];
-            scene.children.forEach(child => {
-                if (child.type === 'Line') childrenToRemove.push(child);
-            });
-            childrenToRemove.forEach(child => scene.remove(child));
-
-            // 获取世界坐标系下的点位置（简化：直接用原始数据，忽略旋转带来的复杂计算，只做视觉近似）
-            // 如果要精确跟随旋转，需要 applyMatrix4，这里为了简单只做点本身的移动
-            
-            /* 
-               高级版连线逻辑：
-               这里为了保证性能和代码简洁，我们不每帧重绘所有线。
-               而是让粒子系统整体旋转，这样线（如果预先生成好）会跟着转。
-               但因为要“神经网络”效果（即点动线动），最简单的原生JS方法是：
-               只画点，不画复杂的动态线，或者使用现成的库 (tsparticles)。
-               
-               在此代码中，为了性能平衡，我保留点的漂浮，并添加微弱的“鼠标排斥”感。
-            */
+            // 简单的鼠标视差跟随
+            particlesMesh.rotation.x += 0.05 * (mouseY * 0.001 - particlesMesh.rotation.x);
+            particlesMesh.rotation.y += 0.05 * (mouseX * 0.001 - particlesMesh.rotation.y);
 
             renderer.render(scene, camera);
         };
