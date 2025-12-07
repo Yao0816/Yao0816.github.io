@@ -8,10 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -31,16 +31,13 @@
         }
     </script>
     <style>
-        /* 滚动条 */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
-        /* 背景与玻璃态 */
         #canvas-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: linear-gradient(to bottom right, #020617, #0f172a);
         }
         .glass {
@@ -49,50 +46,33 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
-        /* 导航激活状态 */
-        .nav-link.active {
-            color: #3b82f6;
-            font-weight: 600;
-        }
-
-        /* 锚点定位偏移 */
-        section {
-            scroll-margin-top: 5rem;
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
+        .nav-link.active { color: #3b82f6; font-weight: 600; }
+        section { scroll-margin-top: 5rem; }
+        .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
     </style>
 </head>
 <body class="text-slate-300 antialiased overflow-x-hidden selection:bg-primary selection:text-white">
 
-    <!-- 3D 粒子背景 -->
     <div id="canvas-container"></div>
 
-    <!-- 导航栏 -->
+    <!-- Navbar -->
     <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
                 <div class="flex-shrink-0 font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 font-mono cursor-pointer" onclick="window.scrollTo(0,0)">
                     YY.
                 </div>
-                
-                <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
+                    <div class="ml-10 flex items-baseline space-x-6">
                         <a href="#home" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         <a href="#about" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#research" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                        <a href="#research" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <!-- 新增 Publications 入口 -->
+                        <a href="#publications" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Publications</a>
                         <a href="#projects" class="nav-link hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#contact" class="px-4 py-2 rounded-full bg-primary/20 text-primary border border-primary/50 hover:bg-primary hover:text-white transition-all text-sm font-medium">Contact Me</a>
+                        <a href="#contact" class="px-4 py-2 rounded-full bg-primary/20 text-primary border border-primary/50 hover:bg-primary hover:text-white transition-all text-sm font-medium">Contact</a>
                     </div>
                 </div>
-
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -100,13 +80,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/5 absolute w-full">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
                 <a href="#home" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
                 <a href="#about" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#research" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Research</a>
+                <a href="#research" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#publications" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Publications</a>
                 <a href="#projects" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
                 <a href="#contact" class="mobile-link text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
             </div>
@@ -138,7 +118,6 @@
                     </a>
                 </div>
                 
-                <!-- Quick Stats -->
                 <div class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
                     <div>
                         <div class="text-3xl font-bold text-white">88.56</div>
@@ -155,7 +134,6 @@
                 </div>
             </div>
             
-            <!-- Code Visual -->
             <div class="md:w-1/2 mt-12 md:mt-0 relative z-10" data-aos="fade-left">
                 <div class="relative w-full aspect-square max-w-md mx-auto group">
                     <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
@@ -173,8 +151,7 @@
                             <p class="pl-8">self.interests = [<span class="text-green-300">"Multi-Agent"</span>, <span class="text-green-300">"LLMs"</span>, <span class="text-green-300">"CV"</span>]</p>
                             <p class="pl-4 mt-2">def <span class="text-blue-400">get_status</span>(self):</p>
                             <p class="pl-8"><span class="text-purple-400">while</span> <span class="text-yellow-300">True</span>:</p>
-                            <p class="pl-12">self.learn()</p>
-                            <p class="pl-12">self.code()</p>
+                            <p class="pl-12">self.paper_writing()</p>
                             <p class="pl-12">self.innovate()</p>
                         </div>
                     </div>
@@ -189,7 +166,6 @@
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Technical Arsenal</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Languages & Tools -->
                 <div class="glass p-8 rounded-2xl hover:bg-slate-800/50 transition-colors" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-xl font-semibold text-white mb-6 flex items-center">
                         <i class="fas fa-code text-blue-400 mr-3"></i> Core Stack
@@ -200,35 +176,31 @@
                         <span class="skill-tag px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-mono cursor-default">PyTorch</span>
                         <span class="skill-tag px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-mono cursor-default">Docker</span>
                         <span class="skill-tag px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-mono cursor-default">MySQL</span>
-                        <span class="skill-tag px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm font-mono cursor-default">HTML/CSS/JS</span>
                     </div>
                 </div>
 
-                <!-- AI Focus -->
                 <div class="glass p-8 rounded-2xl hover:bg-slate-800/50 transition-colors" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-xl font-semibold text-white mb-6 flex items-center">
                         <i class="fas fa-brain text-purple-400 mr-3"></i> AI Specialization
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">Large Language Models</span>
-                        <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">Transformers</span>
+                        <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">LLMs & Agents</span>
+                        <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">RAG Systems</span>
                         <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">Computer Vision</span>
                         <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">Prompt Engineering</span>
-                        <span class="skill-tag px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-mono cursor-default">Hugging Face</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research & Experience Timeline -->
+    <!-- Research Experience -->
     <section id="research" class="py-20 bg-slate-900/30">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-16 text-center" data-aos="fade-up">Research & Experience</h2>
+            <h2 class="text-3xl font-bold text-white mb-16 text-center" data-aos="fade-up">Research Experience</h2>
             
             <div class="relative border-l-2 border-slate-700 ml-4 md:ml-0 space-y-12">
-                
-                <!-- Item 1 -->
+                <!-- Exp 1 -->
                 <div class="relative pl-8 md:pl-0" data-aos="fade-right">
                     <div class="md:w-1/2 md:pr-12 md:text-right md:absolute md:left-0 top-0">
                         <span class="text-primary font-bold tracking-wider text-sm uppercase">Aug 2025 – Present</span>
@@ -247,7 +219,7 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- Exp 2 -->
                 <div class="relative pl-8 md:pl-0" data-aos="fade-left">
                     <div class="md:w-1/2 md:pr-12 md:text-right md:absolute md:left-0 top-0">
                         <span class="text-purple-400 font-bold tracking-wider text-sm uppercase">May 2025 – Present</span>
@@ -266,7 +238,7 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- Exp 3 -->
                 <div class="relative pl-8 md:pl-0" data-aos="fade-right">
                     <div class="md:w-1/2 md:pr-12 md:text-right md:absolute md:left-0 top-0">
                         <span class="text-green-400 font-bold tracking-wider text-sm uppercase">Jan 2024 – Feb 2024</span>
@@ -280,89 +252,146 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Publications / Selected Works -->
+    <section id="publications" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Selected Publications</h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Paper 1: Detect and Correct -->
+                <div class="glass p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <!-- Left: Info -->
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="px-3 py-1 text-xs font-bold text-yellow-300 bg-yellow-400/10 rounded-full border border-yellow-400/20">In Preparation</span>
+                                <span class="text-slate-500 text-xs font-mono">2025</span>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                                Detect and Correct: A Hybrid Feedback Framework for Mitigating Hallucinations in LLM-based Code Generation
+                            </h3>
+                            <p class="text-slate-400 text-sm mb-4">
+                                <span class="text-white font-semibold">Yinsheng Yao</span>, [Co-authors...]
+                            </p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Addressed the hallucination issue in LLM code generation by proposing a hybrid feedback mechanism. This framework combines a token-level probability detector with execution-based feedback to iteratively refine generated code, achieving significant improvements on HumanEval benchmarks.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500">
+                                <span class="bg-slate-800 px-2 py-1 rounded">#LLM</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded">#Hallucination</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded">#CodeGeneration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paper 2: MAVEN -->
+                <div class="glass p-8 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="px-3 py-1 text-xs font-bold text-blue-300 bg-blue-400/10 rounded-full border border-blue-400/20">In Preparation</span>
+                                <span class="text-slate-500 text-xs font-mono">2025</span>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                                MAVEN: Multi-Agent Verification and Elaboration Network
+                            </h3>
+                            <p class="text-slate-400 text-sm mb-4">
+                                <span class="text-white font-semibold">Yinsheng Yao</span>, [Co-authors...]
+                            </p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Proposed a multi-agent system where agents assume distinct roles (e.g., Verifier, Elaborator) to enhance reasoning capabilities in complex QA tasks. The system utilizes a dynamic routing mechanism based on reasoning hops to optimize agent collaboration.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500">
+                                <span class="bg-slate-800 px-2 py-1 rounded">#Multi-Agent</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded">#Reasoning</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded">#NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
 
     <!-- Projects Grid -->
-    <section id="projects" class="py-20">
+    <section id="projects" class="py-20 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project 1 -->
-                <div class="glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 bg-slate-800 relative overflow-hidden group">
+                <!-- Project 1: Sign Language -->
+                <div class="glass rounded-xl overflow-hidden group flex flex-col hover:border-blue-500/50 transition-all" data-aos="fade-up">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
-                        <div class="absolute inset-0 flex items-center justify-center bg-slate-900 z-0">
-                            <i class="fas fa-sign-language text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
-                        </div>
+                        <i class="fas fa-sign-language text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
                         <div class="absolute bottom-4 left-4 z-20">
                             <span class="text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20">Award Winner</span>
                         </div>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Multilingual Sign Language LLM</h3>
+                        <h3 class="text-lg font-bold text-white mb-2">Multilingual Sign Language LLM</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">
-                            Designed logic for video synthesis from natural language to sign language. Validated gesture consistency for Digital Humans.
+                            Designed logic for video synthesis from natural language to sign language. Validated gesture consistency.
                         </p>
                         <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
                             <div class="flex gap-2 text-xs text-slate-500 font-mono">
-                                <span>#LLM</span>
-                                <span>#VideoGen</span>
+                                <span>#LLM</span> <span>#VideoGen</span>
                             </div>
-                            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-lg"></i></a>
+                            <!-- ⚠️ 链接检查：如果没有GitHub链接，请删除下方这个 <a> 标签 -->
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" title="Source Code"><i class="fab fa-github text-lg"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                <!-- Project 2: Calligraphy -->
+                <div class="glass rounded-xl overflow-hidden group flex flex-col hover:border-blue-500/50 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
-                        <div class="absolute inset-0 flex items-center justify-center bg-slate-900">
-                            <i class="fas fa-pen-nib text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
-                        </div>
+                        <i class="fas fa-pen-nib text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Chinese Calligraphy Style Recognition</h3>
+                        <h3 class="text-lg font-bold text-white mb-2">Calligraphy Style Recognition</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">
-                            Deep learning framework for 400 styles using ViT. Developed 3 web apps for style recognition and retrieval.
+                            Deep learning framework for 400 styles using ViT. Developed 3 web apps for retrieval.
                         </p>
                         <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
                             <div class="flex gap-2 text-xs text-slate-500 font-mono">
-                                <span>#ViT</span>
-                                <span>#WebDev</span>
+                                <span>#ViT</span> <span>#WebDev</span>
                             </div>
                             <div class="flex gap-3">
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-lg"></i></a>
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fas fa-external-link-alt text-lg"></i></a>
+                                <!-- ⚠️ 链接检查：填入链接或删除 -->
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="Source Code"><i class="fab fa-github text-lg"></i></a>
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="Live Demo"><i class="fas fa-external-link-alt text-lg"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                <!-- Project 3: Discovery -->
+                <div class="glass rounded-xl overflow-hidden group flex flex-col hover:border-blue-500/50 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
-                        <div class="absolute inset-0 flex items-center justify-center bg-slate-900">
-                            <i class="fas fa-chart-network text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
-                        </div>
+                        <i class="fas fa-chart-network text-6xl text-slate-700 group-hover:text-slate-600 transition-colors transform group-hover:scale-110 duration-500"></i>
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Calligraphy Style Discovery</h3>
+                        <h3 class="text-lg font-bold text-white mb-2">Calligraphy Style Discovery</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">
-                            Built a comprehensive style-specific dataset and timeline visualizations. Trained NN using SupConLoss and DINO.
+                            Style-specific dataset and timeline visualizations. Trained using SupConLoss and DINO.
                         </p>
                         <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-4">
                             <div class="flex gap-2 text-xs text-slate-500 font-mono">
-                                <span>#DINO</span>
-                                <span>#DataViz</span>
+                                <span>#DINO</span> <span>#DataViz</span>
                             </div>
-                            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fas fa-file-pdf text-lg"></i></a>
+                             <!-- ⚠️ 链接检查：填入PDF链接或删除 -->
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" title="Read Paper"><i class="fas fa-file-pdf text-lg"></i></a>
                         </div>
                     </div>
                 </div>
@@ -371,44 +400,51 @@
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <section id="contact" class="border-t border-white/10 bg-slate-900/80 py-12 text-center relative z-10">
+    <!-- Contact Section (Optimized Email) -->
+    <section id="contact" class="border-t border-white/10 bg-slate-900/80 py-16 text-center relative z-10">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-2xl font-bold text-white mb-2">Let's Connect</h2>
-            <p class="text-slate-400 text-sm mb-8">Feel free to reach out for collaborations or just a chat about AI.</p>
+            <p class="text-slate-400 text-sm mb-10">Feel free to reach out for collaborations or just a chat about AI.</p>
             
-            <div class="flex justify-center space-x-8 mb-8">
-                <!-- Email -->
-                <a href="mailto:2251929@tongji.edu.cn" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all">
-                        <i class="fas fa-envelope text-xl"></i>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+                
+                <!-- Email Box -->
+                <div class="group flex flex-col items-center gap-3">
+                    <a href="mailto:2251929@tongji.edu.cn" class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 group-hover:text-primary transition-all cursor-pointer">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <div class="flex flex-col items-center">
+                        <span class="text-sm font-semibold text-slate-300">Email</span>
+                        <!-- 显式显示邮箱，方便复制 -->
+                        <span class="text-xs text-slate-500 select-all font-mono mt-1 hover:text-white transition-colors">2251929@tongji.edu.cn</span>
                     </div>
-                    <span class="text-xs">Email</span>
-                </a>
+                </div>
+
                 <!-- GitHub -->
-                <a href="https://github.com/yao0816" target="_blank" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-all">
-                        <i class="fab fa-github text-xl"></i>
-                    </div>
-                    <span class="text-xs">GitHub</span>
-                </a>
-                <!-- LinkedIn (Updated) -->
-                <a href="https://www.linkedin.com/in/yinsheng-yao/" target="_blank" class="group flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-blue-600/20 group-hover:text-blue-500 transition-all">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </div>
-                    <span class="text-xs">LinkedIn</span>
-                </a>
+                <div class="group flex flex-col items-center gap-3">
+                    <a href="https://github.com/yao0816" target="_blank" class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-white/10 group-hover:text-white transition-all">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <span class="text-sm font-semibold text-slate-300">GitHub</span>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="group flex flex-col items-center gap-3">
+                    <a href="https://www.linkedin.com/in/yinsheng-yao/" target="_blank" class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-blue-600/20 group-hover:text-blue-500 transition-all">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <span class="text-sm font-semibold text-slate-300">LinkedIn</span>
+                </div>
             </div>
-            <p class="text-slate-600 text-sm">
-                &copy; 2025 Yinsheng Yao. Built with Tailwind & Three.js.
+            
+            <p class="text-slate-600 text-sm mt-12">
+                &copy; 2025 Yinsheng Yao.
             </p>
         </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-            class="fixed bottom-8 right-8 bg-primary/20 hover:bg-primary text-primary hover:text-white border border-primary/50 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 z-50">
+    <!-- Back to Top -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-primary/20 hover:bg-primary text-primary hover:text-white border border-primary/50 p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 z-50">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -416,116 +452,71 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
     <script>
-        // 1. 初始化 AOS 动画
         AOS.init({ duration: 800, once: true, offset: 50 });
-
-        // 2. 打字机效果
         new Typewriter('#typewriter', {
             strings: ['AI Researcher', 'Full Stack Developer', 'Data Scientist', 'CS Student @ Tongji'],
             autoStart: true, loop: true, cursor: '_', delay: 75,
         });
-
-        // 3. 移动端菜单逻辑
+        
+        // Mobile Menu
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-        
-        links.forEach(link => {
-            link.addEventListener('click', () => menu.classList.add('hidden'));
-        });
-
-        // 4. Scroll Spy & Back to Top 逻辑
+        // Scroll Spy
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('section');
         const backToTopBtn = document.getElementById('back-to-top');
 
         window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.remove('opacity-0', 'translate-y-10');
+            else backToTopBtn.classList.add('opacity-0', 'translate-y-10');
+
             let current = '';
-            
-            // Back to Top Button visibility
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'translate-y-10');
-            } else {
-                backToTopBtn.classList.add('opacity-0', 'translate-y-10');
-            }
-
-            // Scroll Spy
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
+                if (scrollY >= section.offsetTop - 150) current = section.getAttribute('id');
             });
-
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href').includes(current)) link.classList.add('active');
             });
         });
 
-        // 5. Three.js 背景
+        // Three.js
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        
-        const container = document.getElementById('canvas-container');
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-
-        const particlesCount = 80;
-        const posArray = new Float32Array(particlesCount * 3);
-        
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 20; 
-        }
 
         const particlesGeometry = new THREE.BufferGeometry();
+        const count = 80;
+        const posArray = new Float32Array(count * 3);
+        for(let i=0; i<count*3; i++) posArray[i] = (Math.random()-0.5)*20;
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.08,
-            color: 0x3b82f6,
-            transparent: true,
-            opacity: 0.8,
-        });
-
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
+        const material = new THREE.PointsMaterial({ size: 0.08, color: 0x3b82f6, transparent: true, opacity: 0.8 });
+        const mesh = new THREE.Points(particlesGeometry, material);
+        scene.add(mesh);
         camera.position.z = 5;
 
-        let mouseX = 0;
-        let mouseY = 0;
-
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX - window.innerWidth / 2;
-            mouseY = event.clientY - window.innerHeight / 2;
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX - window.innerWidth/2;
+            mouseY = e.clientY - window.innerHeight/2;
         });
 
         const animate = () => {
             requestAnimationFrame(animate);
-
-            particlesMesh.rotation.y += 0.001;
-            
-            // 简单的鼠标视差跟随
-            particlesMesh.rotation.x += 0.05 * (mouseY * 0.001 - particlesMesh.rotation.x);
-            particlesMesh.rotation.y += 0.05 * (mouseX * 0.001 - particlesMesh.rotation.y);
-
+            mesh.rotation.y += 0.001;
+            mesh.rotation.x += 0.05 * (mouseY*0.001 - mesh.rotation.x);
+            mesh.rotation.y += 0.05 * (mouseX*0.001 - mesh.rotation.y);
             renderer.render(scene, camera);
         };
-
         animate();
-
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = window.innerWidth/window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
