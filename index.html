@@ -312,7 +312,7 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <span
-                                    class="px-2 py-1 rounded bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg flex items-center">
+                                    class="px-2 py-1 rounded bg-purple-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg flex items-center">
                                     <i class="fas fa-paper-plane mr-1"></i> SIGIR 2026 SUBMITTED
                                 </span>
                             </div>
@@ -366,7 +366,7 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
                             <div class="absolute bottom-4 left-4">
                                 <span
-                                    class="px-2 py-1 rounded bg-yellow-600 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg flex items-center">
+                                    class="px-2 py-1 rounded bg-yellow-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg flex items-center">
                                     <i class="fas fa-medal mr-1"></i> TOP 40 RECOMMENDED
                                 </span>
                             </div>
@@ -655,7 +655,7 @@
                 <div class="glass glass-card-hover p-8 md:p-10 rounded-2xl border border-white/10" data-aos="fade-up">
                     <div class="flex flex-col gap-6">
                         <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                            <div>
+                            <div class="max-w-3xl">
                                 <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
                                     Financial Research Report Deep Analysis: A Benchmark for Causal & Numerical
                                     Reasoning
@@ -665,52 +665,112 @@
                                     <span
                                         class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30">Core
                                         Contributor</span>
+                                    <span class="text-slate-500 mx-2">|</span>
+                                    <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1"><i
+                                            class="fas fa-university mr-1"></i> Tongji
+                                        University</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 flex-shrink-0">
+                            <div class="flex flex-col items-end gap-2 flex-shrink-0">
                                 <span
-                                    class="px-3 py-1 text-xs font-bold text-blue-300 bg-blue-400/10 rounded-full border border-blue-400/20">In
-                                    Preparation</span>
-                                <span class="text-slate-500 text-xs font-mono">2025/2026</span>
+                                    class="px-3 py-1 text-xs font-bold text-blue-300 bg-blue-400/10 rounded-full border border-blue-400/20 shadow-[0_0_10px_rgba(59,130,246,0.3)]">Preparing
+                                    for SIGIR</span>
+                                <span class="text-slate-500 text-xs font-mono">Oct 2025 - Present</span>
                             </div>
                         </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                            <div class="md:col-span-2 space-y-4">
-                                <p class="text-slate-300 text-sm leading-relaxed text-justify">
-                                    Addressing the challenges of <b>long-form financial text analysis</b>, this work
-                                    defines
-                                    fine-grained evaluation dimensions for causal reasoning and risk identification. I
-                                    led the
-                                    development of the analysis module, constructing a structured QA dataset that
-                                    incorporates
-                                    <b>numerical reasoning</b> and <b>factual grounding</b> challenges.
-                                </p>
-                                <div class="p-5 bg-slate-900/50 rounded-lg border border-white/5">
-                                    <h4 class="text-xs uppercase tracking-wider text-blue-400 font-bold mb-3"><i
-                                            class="fas fa-microscope mr-2"></i>Research Impact</h4>
-                                    <ul class="space-y-2 text-sm text-slate-200">
-                                        <li><span class="text-blue-400 font-bold">Comprehensive Benchmark:</span>
-                                            Targets risk
-                                            identification and comparative analysis in financial domains.</li>
-                                        <li><span class="text-blue-400 font-bold">Rule-based Evaluation:</span>
-                                            Implemented complex
-                                            reasoning challenges to stress-test LLM capabilities.</li>
-                                    </ul>
+                            <div class="md:col-span-2 space-y-6">
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">Project
+                                        Overview &
+                                        Methodology</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed text-justify">
+                                        This research addresses the interpretability crisis in financial AI by
+                                        constructing a
+                                        high-fidelity benchmark for <b>long-form financial research reports</b>. I led
+                                        the
+                                        development of the deep analysis module, which transcends simple retrieval by
+                                        targeting
+                                        <b>causal reasoning, factual grounding, risk identification, and comparative
+                                            analysis</b>.
+                                        The core contribution involves a structured QA dataset designed with
+                                        <b>rule-based and
+                                            numerical reasoning</b> challenges that test the limits of current Large
+                                        Language Models
+                                        in financial document understanding.
+                                    </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="p-4 bg-blue-500/5 rounded-lg border border-blue-500/10">
+                                        <h5 class="text-blue-400 text-xs font-bold mb-2 uppercase">Evaluation Dimensions
+                                        </h5>
+                                        <p class="text-xs text-slate-400 leading-normal">Defining fine-grained
+                                            metrics across 4
+                                            dimensions: Causality Chain, Factual Grounding, Risk Potential, and Entity
+                                            Comparison.
+                                        </p>
+                                    </div>
+                                    <div class="p-4 bg-indigo-500/5 rounded-lg border border-indigo-500/10">
+                                        <h5 class="text-indigo-400 text-xs font-bold mb-2 uppercase">Reasoning
+                                            Challenges</h5>
+                                        <p class="text-xs text-slate-400 leading-normal">Implementing multi-step
+                                            numerical
+                                            calculation and logic-driven rule-matching scenarios based on real market
+                                            data.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="md:col-span-1 bg-white/5 rounded-xl p-5 border border-white/5">
-                                <h4 class="text-xs uppercase tracking-wider text-blue-400 font-bold mb-4">Core Focus
-                                </h4>
-                                <div class="space-y-4 text-xs text-slate-300">
-                                    <div class="flex items-center gap-2"><i class="fas fa-chart-line text-blue-400"></i>
-                                        Financial
-                                        Causality</div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-calculator text-blue-400"></i>
-                                        Numerical
-                                        Reasoning</div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-blue-400"></i>
-                                        Risk
-                                        Identification</div>
+
+                            <div class="md:col-span-1 flex flex-col gap-4">
+                                <div class="bg-white/5 rounded-xl p-6 border border-white/5 h-full">
+                                    <h4 class="text-xs uppercase tracking-wider text-blue-400 font-bold mb-4">Benchmark
+                                        Architecture
+                                    </h4>
+                                    <ul class="space-y-5">
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400">
+                                                <i class="fas fa-layer-group text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">Long-form Financial
+                                                    Corpus</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Processing
+                                                    structured and
+                                                    unstructured
+                                                    financial data.</span>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400">
+                                                <i class="fas fa-vial text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">QA Dataset
+                                                    Synthesis</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Numerical
+                                                    reasoning challenges with
+                                                    rule-based grounding.</span>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-blue-400">
+                                                <i class="fas fa-chart-bar text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">Risk
+                                                    Identification</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Detecting
+                                                    latent financial risks
+                                                    through
+                                                    causal mapping.</span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -721,59 +781,102 @@
                     data-aos-delay="100">
                     <div class="flex flex-col gap-6">
                         <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                            <div>
+                            <div class="max-w-3xl">
                                 <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
                                     MAVEN: Multi-Agent Verification and Elaboration Network
                                 </h3>
                                 <div class="text-sm text-slate-400 mt-2 flex flex-wrap items-center gap-2">
                                     <span class="text-white font-semibold text-lg">Yinsheng Yao</span>
                                     <span
-                                        class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30">First
+                                        class="px-2 py-0.5 rounded-full bg-purple-200/10 text-purple-400 text-xs font-bold border border-purple-500/30">First
                                         Author</span>
+                                    <span class="text-slate-500 mx-2">|</span>
+                                    <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1"><i
+                                            class="fas fa-user-tie mr-1"></i>
+                                        Supervisor: Prof.
+                                        Dawei Cheng</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 flex-shrink-0">
+                            <div class="flex flex-col items-end gap-2 flex-shrink-0">
                                 <span
                                     class="px-3 py-1 text-xs font-bold text-purple-300 bg-purple-400/10 rounded-full border border-purple-400/20 shadow-[0_0_10px_rgba(168,85,247,0.3)]">Submitted
                                     to SIGIR</span>
-                                <span class="text-slate-500 text-xs font-mono">2025</span>
+                                <span class="text-slate-500 text-xs font-mono">Aug 2025 - Jan 2026</span>
                             </div>
                         </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                            <div class="md:col-span-2 space-y-4">
-                                <p class="text-slate-300 text-sm leading-relaxed text-justify">
-                                    MAVEN introduces a <b>reasoning-hop-based routing mechanism</b> that dynamically
-                                    selects between
-                                    fast and full reasoning pipelines. This architecture supports multi-stage planning,
-                                    internal
-                                    debate, and consensus synthesis, significantly improving factual consistency.
-                                </p>
+                            <div class="md:col-span-2 space-y-6">
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">Abstract
+                                        & System
+                                        Design</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed text-justify">
+                                        MAVEN is a sophisticated multi-agent reasoning architecture designed to emulate
+                                        System 2
+                                        thinking. It integrates five specialized roles: <b>Planner, Researcher, Skeptic,
+                                            Judge, and
+                                            Stylist</b> to support multi-stage planning and consensus synthesis. The
+                                        core innovation
+                                        is a <b>reasoning-hop-based routing mechanism</b>, which enables the system to
+                                        dynamically
+                                        select pathways between fast and full reasoning pipelines based on the
+                                        complexity of the
+                                        task, significantly improving factual consistency on datasets like <b>OBQA and
+                                            TruthfulQA</b>.
+                                    </p>
+                                </div>
+
                                 <div class="p-5 bg-slate-900/50 rounded-lg border border-white/5">
                                     <h4 class="text-xs uppercase tracking-wider text-purple-400 font-bold mb-3"><i
-                                            class="fas fa-check-circle mr-2"></i>Performance</h4>
-                                    <ul class="space-y-2 text-sm text-slate-200">
-                                        <li><span class="text-purple-400 font-bold">Dynamic Routing:</span> Optimized
-                                            path selection
-                                            based on task complexity.</li>
-                                        <li><span class="text-purple-400 font-bold">Robust Consensus:</span> Achieved
-                                            state-of-the-art on OBQA and TruthfulQA.</li>
-                                    </ul>
+                                            class="fas fa-microchip mr-2"></i>Engineering Implementation</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                                        <div class="flex items-center gap-2 text-xs text-slate-300"><i
+                                                class="fas fa-check text-purple-500"></i> Standardized JSON
+                                            Communication Protocols
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-slate-300"><i
+                                                class="fas fa-check text-purple-500"></i> Asynchronous Web Verification
+                                            Loops</div>
+                                        <div class="flex items-center gap-2 text-xs text-slate-300"><i
+                                                class="fas fa-check text-purple-500"></i> Reasoning-Hop Routing
+                                            Mechanism</div>
+                                        <div class="flex items-center gap-2 text-xs text-slate-300"><i
+                                                class="fas fa-check text-purple-500"></i> Multi-Agent Internal Debate &
+                                            Synthesis
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="md:col-span-1 bg-white/5 rounded-xl p-5 border border-white/5">
-                                <h4 class="text-xs uppercase tracking-wider text-pink-400 font-bold mb-4">Innovation
-                                </h4>
-                                <ul class="space-y-4">
-                                    <li class="flex items-start gap-3 text-xs text-slate-300">
-                                        <i class="fas fa-random text-pink-400 mt-1"></i>
-                                        <div><strong>Reasoning-Hop Routing:</strong> Balancing efficiency and depth.
+
+                            <div class="md:col-span-1">
+                                <div class="bg-white/5 rounded-xl p-6 border border-white/5 h-full">
+                                    <h4 class="text-xs uppercase tracking-wider text-pink-400 font-bold mb-4">
+                                        Specialized Agent
+                                        Roles</h4>
+                                    <div class="space-y-4">
+                                        <div class="flex flex-col gap-1">
+                                            <span class="text-xs font-bold text-slate-200">Planner &
+                                                Researcher</span>
+                                            <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Path selection
+                                                and asynchronous factual
+                                                retrieval.</span>
                                         </div>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-xs text-slate-300">
-                                        <i class="fas fa-users text-pink-400 mt-1"></i>
-                                        <div><strong>Consensus Synthesis:</strong> Advanced internal debate loops.</div>
-                                    </li>
-                                </ul>
+                                        <div class="flex flex-col gap-1">
+                                            <span class="text-xs font-bold text-slate-200">Skeptic & Judge</span>
+                                            <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Internal
+                                                debate loop and final
+                                                consensus
+                                                verification.</span>
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <span class="text-xs font-bold text-slate-200">Stylist</span>
+                                            <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Final response
+                                                refinement and
+                                                formatting.</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -783,58 +886,121 @@
                     data-aos-delay="200">
                     <div class="flex flex-col gap-6">
                         <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-                            <div>
+                            <div class="max-w-3xl">
                                 <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
                                     Detect and Correct: A Hybrid Feedback Framework for Code Hallucination Mitigation
                                 </h3>
                                 <div class="text-sm text-slate-400 mt-2 flex flex-wrap items-center gap-2">
                                     <span class="text-white font-semibold text-lg">Yinsheng Yao</span>
                                     <span
-                                        class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/30">First
+                                        class="px-2 py-0.5 rounded-full bg-green-200/10 text-green-400 text-xs font-bold border border-green-500/30">First
                                         Author</span>
+                                    <span class="text-slate-500 mx-2">|</span>
+                                    <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1"><i
+                                            class="fas fa-university mr-1"></i> Purdue
+                                        University
+                                        (Remote)</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 flex-shrink-0">
+                            <div class="flex flex-col items-end gap-2 flex-shrink-0">
                                 <span
-                                    class="px-3 py-1 text-xs font-bold text-yellow-300 bg-yellow-400/10 rounded-full border border-yellow-400/20">In
+                                    class="px-3 py-1 text-xs font-bold text-yellow-300 bg-yellow-400/10 rounded-full border border-yellow-400/20 shadow-[0_0_10px_rgba(250,204,21,0.2)]">In
                                     Preparation</span>
-                                <span class="text-slate-500 text-xs font-mono">2025</span>
+                                <span class="text-slate-500 text-xs font-mono">May 2025 - Present</span>
                             </div>
                         </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                            <div class="md:col-span-2 space-y-4">
-                                <p class="text-slate-300 text-sm leading-relaxed text-justify">
-                                    Developing a <b>Hybrid Feedback Framework</b> combining execution verification with
-                                    Transformer-based detection using token, syntax, and confidence features to localize
-                                    logical
-                                    errors in LLM-generated code.
-                                </p>
-                                <div class="p-5 bg-slate-900/50 rounded-lg border border-white/5">
-                                    <h4 class="text-xs uppercase tracking-wider text-green-400 font-bold mb-3"><i
-                                            class="fas fa-rocket mr-2"></i>Results Update</h4>
-                                    <ul class="space-y-2 text-sm text-slate-200">
-                                        <li><span class="text-green-400 font-bold">Accuracy Gains:</span> Improved
-                                            absolute code
-                                            accuracy by <b>9–20%</b> across HumanEval, MBPP, and BigCodeBench.</li>
-                                        <li><span class="text-green-400 font-bold">Localizing Errors:</span>
-                                            Multi-feature detector
-                                            for precise semantic flaw identification.</li>
-                                    </ul>
+                            <div class="md:col-span-2 space-y-6">
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">Core
+                                        Research &
+                                        Discovery</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed text-justify">
+                                        This work tackles the "silent" logic errors in LLM-based code generation. I
+                                        designed a
+                                        <b>Hybrid Feedback Framework</b> that integrates a <b>Transformer-based
+                                            detector</b>—using
+                                        token, syntax, and confidence features—with <b>execution-based verification</b>.
+                                        To solve
+                                        repetitive error loops, I implemented a <b>“reset thinking” mechanism</b> and
+                                        structured
+                                        hybrid prompts, achieving a <b>9-20% improvement</b> in absolute code accuracy
+                                        across
+                                        benchmarks including <b>HumanEval, MBPP, LiveCodeBench, and BigCodeBench</b>.
+                                    </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div
+                                        class="p-4 bg-slate-900/50 rounded-lg border border-white/5 flex flex-col items-center text-center">
+                                        <span class="text-2xl font-bold text-green-400 mb-1">9-20%</span>
+                                        <span
+                                            class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1 uppercase font-bold">Accuracy
+                                            Gain</span>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-slate-900/50 rounded-lg border border-white/5 flex flex-col items-center text-center">
+                                        <span class="text-2xl font-bold text-green-400 mb-1">4</span>
+                                        <span
+                                            class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1 uppercase font-bold">Benchmarks</span>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-slate-900/50 rounded-lg border border-white/5 flex flex-col items-center text-center">
+                                        <span class="text-2xl font-bold text-green-400 mb-1">Hybrid</span>
+                                        <span
+                                            class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1 uppercase font-bold">Feedback
+                                            Loop</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="md:col-span-1 bg-white/5 rounded-xl p-5 border border-white/5">
-                                <h4 class="text-xs uppercase tracking-wider text-green-400 font-bold mb-4">Architecture
-                                </h4>
-                                <div class="space-y-4 text-xs text-slate-300">
-                                    <div class="flex items-center gap-2"><i class="fas fa-microchip text-green-400"></i>
-                                        Transformer
-                                        Detector</div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-terminal text-green-400"></i>
-                                        Execution
-                                        Verification</div>
-                                    <div class="flex items-center gap-2"><i class="fas fa-redo text-green-400"></i>
-                                        Reset Thinking
-                                    </div>
+
+                            <div class="md:col-span-1">
+                                <div class="bg-white/5 rounded-xl p-6 border border-white/5 h-full">
+                                    <h4 class="text-xs uppercase tracking-wider text-green-400 font-bold mb-4">
+                                        Innovation Highlights
+                                    </h4>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center flex-shrink-0 text-green-400">
+                                                <i class="fas fa-search-location text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">Error
+                                                    Localization</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Token,
+                                                    syntax, and confidence
+                                                    analysis.</span>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center flex-shrink-0 text-green-400">
+                                                <i class="fas fa-terminal text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">Execution
+                                                    Feedback</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Real-time
+                                                    tracebacks for logical
+                                                    repair.</span>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center flex-shrink-0 text-green-400">
+                                                <i class="fas fa-sync-alt text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <span class="block text-xs text-slate-200 font-bold">Reset
+                                                    Thinking</span>
+                                                <span class="text-slate-400 text-sm mb-4 line-clamp-3 flex-1">Iterative
+                                                    correction via structured
+                                                    prompts.</span>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -861,10 +1027,10 @@
                         </div>
                         <div class="absolute bottom-4 left-4 z-20 pointer-events-none flex flex-col gap-2">
                             <span
-                                class="text-[10px] font-bold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20 w-fit">Competition
+                                class="text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20 w-fit">Competition
                                 Award Winner</span>
                             <span
-                                class="text-[10px] font-bold text-blue-400 bg-blue-400/10 px-2 py-1 rounded border border-blue-400/20 w-fit">Team
+                                class="text-xs font-bold text-blue-400 bg-blue-400/10 px-2 py-1 rounded border border-blue-400/20 w-fit">Team
                                 Leader</span>
                         </div>
                     </div>
@@ -876,7 +1042,7 @@
                             digital human motions with demonstrations.
                         </p>
                         <div class="mt-4 border-t border-white/5 pt-4">
-                            <div class="flex gap-2 text-xs text-slate-500 font-mono">
+                            <div class="flex gap-2 text-slate-400 text-sm mb-4 line-clamp-3 flex-1 font-mono">
                                 <span>#LLM</span> <span>#JSON-Pipelines</span> <span>#VideoGen</span>
                             </div>
                         </div>
@@ -893,10 +1059,10 @@
                         </div>
                         <div class="absolute bottom-4 left-4 z-20 pointer-events-none flex flex-col gap-2">
                             <span
-                                class="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-2 py-1 rounded border border-purple-400/20 w-fit">Excellent
+                                class="text-xs font-bold text-purple-400 bg-purple-400/10 px-2 py-1 rounded border border-purple-400/20 w-fit">Excellent
                                 Project Award</span>
                             <span
-                                class="text-[10px] font-bold text-white bg-white/10 px-2 py-1 rounded border border-white/20 w-fit">ViT
+                                class="text-xs font-bold text-white bg-white/10 px-2 py-1 rounded border border-white/20 w-fit">ViT
                                 + ArcFace</span>
                         </div>
                     </div>
@@ -913,7 +1079,7 @@
                             <b>ArcFace loss</b>, improving separation of similar styles.
                         </p>
                         <div class="mt-4 border-t border-white/5 pt-4">
-                            <div class="flex gap-2 text-xs text-slate-500 font-mono">
+                            <div class="flex gap-2 text-slate-400 text-sm mb-4 line-clamp-3 flex-1 font-mono">
                                 <span>#timm</span> <span>#ComputerVision</span> <span>#WebDev</span>
                             </div>
                         </div>
@@ -930,10 +1096,10 @@
                         </div>
                         <div class="absolute bottom-4 left-4 z-20 pointer-events-none flex flex-col gap-2">
                             <span
-                                class="text-[10px] font-bold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20 w-fit">National
+                                class="text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20 w-fit">National
                                 Innovation Program</span>
                             <span
-                                class="text-[10px] font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded border border-green-400/20 w-fit">DINO
+                                class="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded border border-green-400/20 w-fit">DINO
                                 & SupConLoss</span>
                         </div>
                     </div>
@@ -949,7 +1115,7 @@
                             <b>DINO</b>, performing PCA-based feature visualization.
                         </p>
                         <div class="mt-4 border-t border-white/5 pt-4">
-                            <div class="flex gap-2 text-xs text-slate-500 font-mono">
+                            <div class="flex gap-2 text-slate-400 text-sm mb-4 line-clamp-3 flex-1 font-mono">
                                 <span>#Unsupervised</span> <span>#DataVis</span> <span>#Research</span>
                             </div>
                         </div>
